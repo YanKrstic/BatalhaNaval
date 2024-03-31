@@ -18,8 +18,8 @@ while True:
 
 plBomb = 0
 if esc == 1: plBomb = 10
-if esc == 2: plBomb = 15
-if esc == 3: plBomb = 20
+elif esc == 2: plBomb = 15
+elif esc == 3: plBomb = 20
 
 numBomb = rand = c = jogada = 0
 c2 = 1
@@ -76,14 +76,14 @@ while plBomb > 0 and numBomb > 0:
 
     jogada = ((numB-1) * 5) + (numA-1)
     if matriz[jogada] == 0:
-        if matrizPrint[jogada] == 'X ':
+        if matrizPrint[jogada] == '\033[31mX \033[m':
             print('Jogada ja feita')
         else:
             matrizPrint[jogada] = '\033[31mX \033[m'
             plBomb -= 1
 
     elif matriz[jogada] == 1:
-        if matrizPrint[jogada] == '+ ':
+        if matrizPrint[jogada] == '\033[32m+ \033[m':
             print('Jogada ja feita')
         else:
             matrizPrint[jogada] = '\033[32m+ \033[m'
@@ -101,5 +101,5 @@ elif numBomb == 0:
         VOCÊ GANHOU A PARTIDA!
         ----------------------
         ''')
+    
 opiniao = input("você gostou do jogo? ")
-del opiniao # ninguem liga pra tua opiniao 
